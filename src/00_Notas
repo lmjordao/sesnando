@@ -1,0 +1,30 @@
+-- new page macro
+
+Quais eram os principais problemas no juniors quando entravam no projecto do aventra. Por exemplo, quando lhe damos uns requisitos para aos mãos eles não sabem como o testar. O conhecimento sobre comboios é muito importante e às vezes o requisito tem demasiadas caracteristicas técnicas para os juniores conseguirem dissolver.
+
+como são feitos os testes actualmente
+Os testers têm de analisar o requisito e perceber a funcionalidade, muitas das vezes, extrapolar todas as condições e o que aquilo realmente significa no contexto do comboio.
+Daí, gerar um conjunto de condições que irão validar aquele requisito e aqui, não é só necessário haver um sólido conhecimento de como testar, mas também um sólido conhecimento sobre comboios. Isto faz com que haja uma necessidade e um grande esforço acrescido na actividade de teste se esta informação fosse consolidada num repositório e houvesse uma ferramenta para ajudar os testers, surgiu assim, a necessidade de criar o Sesnando. Uma ferramenta que consegue extrapolar casos de teste apartir de um dado conjunto de requisitos.
+
+___
+
+seria interessante, em anexo, definir os requitos desta aplicação no formato de given when then
+
+test case generation
+\textcolor{red}{dar algo mais introdutório... requisitos que tên AND\\
+pode surgir aqui aquela perguntinha mágica sobre o critério, ok, é mcdc (que é clausulas activas, mas é racc, não é racc, o que é?) \\
+existe uma apresentação, um documento online que fala nisto tudo e tem de ser falado neste relatório\\
+será que só por existirem ANDs não podemos afirmar que é RACC, porque no racc as clausulas nao activas não mudam}
+
+
+----- Future work -----
+
+ligar o sesnando ao cucumber/gherkin
+
+elevar o sesnando a outros niveis de teste
+
+elevar o sesnando a outros niveis de systema (ler sobre sistemas de teste)
+por exemplo, aqui temos
+
+O sesnando sincronizar uma base de dados local com a base de dados remota eliminando a constante dependencia de uma ligação remota
+

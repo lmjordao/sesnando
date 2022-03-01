@@ -1,0 +1,107 @@
+% Master thesis - Mestrado em Informatica e Sistemas
+% Luís Jordão
+% Instituto Superior de Engenharia de Coimbra
+% 2020/2021
+
+
+% Packages
+
+\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+%\usepackage[lmargin=25mm,rmargin=25mm,tmargin=27mm,bmargin=30mm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{emptypage}
+\usepackage{graphicx,xcolor,comment,enumerate,multirow,multicol,indentfirst}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont,mathtools}
+\usepackage{blindtext}
+\usepackage{bibentry} 
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[nottoc]{tocbibind}
+\usepackage{hyphenat}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage{kantlipsum}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+
+\include{Macros}
+
+% Header and Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead[LO,RE]{Chapter \thechapter}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[LO]{Luís Miguel Coelho Jordão}
+\fancyfoot[RE]{Mestrado em Engenharia Informática}
+%\leftmark
+%\rightmark 
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.8pt}
+
+% Document Begin
+\begin{document}
+
+
+% ---------- Document head starts ---------- %
+% Include Chapters
+\include{sections/FrontPage}
+
+\newpage
+\clearpage
+\myemptypage
+
+% Start Roman Numbering
+\pagenumbering{roman}
+% Needed to add Initial chapters to the table of contents
+\addcontentsline{toc}{chapter}{Acknowledgments}
+\include{sections/Acknowledgments}
+\addcontentsline{toc}{chapter}{Resumo}
+\include{sections/Resumo}
+\addcontentsline{toc}{chapter}{Abstract}
+\include{sections/Abstract}
+
+% Table of contents
+\tableofcontents
+% List of Figures
+\listoffigures
+% List of tables
+\listoftables
+
+\addcontentsline{toc}{chapter}{Acronyms}
+\include{sections/Acronyms}
+% ---------- Document head ends ---------- %
+
+% To start arabic numerals
+\pagenumbering{arabic}
+
+% ---------- Document main sections ---------- %
+\include{sections/Introduction}
+\include{sections/Limitations}
+\include{sections/State_of_the_art}
+\include{sections/Sesnando}
+    \include{sections/_Lifecycle}
+    \include{sections/_Method}
+\include{sections/Results}
+
+\addcontentsline{toc}{chapter}{Conclusions and Future Work}
+\include{sections/Conclusion}
+
+
+% Bibliografia automática
+\bibliographystyle{unsrt}
+\bibliography{bibliografia}
+
+\include{sections/Attachments}
+
+\end{document}
