@@ -1,0 +1,31 @@
+%----------------------- Software Architecture ----------------------------
+\section{Software Architecture}
+\label{sec:software_architecture}
+
+Sesnando is divided into multiple modules that communicate with each other. Next those modules will be presented as well as their main roles within sesnando. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.625]{images/sesnando_modules.jpg}
+    \caption{Main application modules}
+\end{figure}
+\label{fig:sesnando_modules}
+
+\begin{itemize}
+
+\item Sesnando.Setup - Is responsible to verify and install all the Application dependencies on the operating system.
+
+\item Sesnando.Compiler - Is the entry point of this Application and will call all the relevant modules as needed.
+
+\item Requirements - This module will be called in the beginning of the program execution. It will read the input requirements and will then parse its contents using an Abstract Syntax Tree, i.e. it contains a predefined grammar that will be used to compile the requirement into a set of Objects. Those will be detailed further within this document.
+
+\item Test Generator - Once the object tree is successfully constructed, this module will be notified to extract the required data from it in order to start to define the first tests, the Object tree will be then mutated to generate new test cases.
+
+\item Common Lib - Where the actual Abstract Syntax Tree objects will be stored, accessible to the whole application suite.
+
+\item Signal Manager - The conversion of the Input requirements into Object trees is not direct and trivial. Signal Manager is a detachable service that contains a database with the purpose to provide low-level technical context to the requirements, i.e., the requirement describe the functionalities on a high-level of abstraction which will be then mapped to a set of software signals ready to be used on the test environment. This is how the application can generate accurately software tests.
+
+\item Code Generator - This module receives the standard output from the test generator and will then generate proper test artifacts compatible with the end test environment, e.g. test scripts.
+
+\item Test Designer - Test designer is a detachable Graphical User Interface (GUI) module with the main purpose of displaying the generated test cases to the User. From this tool, the user is able to review, edit and export these test cases into a permanent file.
+\end{itemize}

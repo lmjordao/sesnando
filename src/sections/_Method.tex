@@ -2,16 +2,16 @@
 %----------------------- Method ----------------------------
 \label{sec:method}
 
-In this section it will be described the steps and decisions taken towards the development of Sesnando. The concepts presented here are the result of the study of the state of the art and internal discussions with Project Advisors.
+This section describes the steps and decisions taken towards the development of Sesnando. The concepts presented here are the result of the study of the state of the art and internal discussions with Project Advisors.
 
 
 \subsection{Resource Analysis}
 %----------------------- Resource Analysis ----------------------------
 \label{subsec:resource_analysis}
 
-This section presents the analysis procedures towards the available resources, namely, requirements sets. The Railway project used for this study stores its requirements on a Requirement Management Tool, it was needed to export such requirements and treat some data to extract relevant knowledge from them towards building a solid grammar that could satisfy these requirements logic.\\
+This section presents the analysis procedures towards the available resources, namely, requirements sets. The Railway project used for this study stores its requirements on a Requirement Management Tool. Those requirements have been exported and analysed to extract relevant knowledge from them towards building a solid grammar that could satisfy these requirements logic.\\
 
-It was not feasible to analyse such requirement one-by-one due to their ammount, so a tool has been developed to extract the needed data. First, the requirements have been exported in chunks of Excel files, but later, this same tool was able to directly access the requirement repository.
+It was not feasible to analyse such requirements one-by-one due to their number, so a tool has been developed to extract the needed data. First, the requirements have been exported in chunks of Excel files, but later, this same tool was able to directly access the requirement repository.
 
 The requirement analysis tool has been developed using the following libraries.
 
@@ -43,8 +43,8 @@ These have been used to define the requirements grammar, as it will be seen on n
 %----------------------- Defining the requirements grammar ----------------------------
 \label{sec:def_req_grammar}
 
-As the grammar lexer set has been identified it was then necessary to define an Abstract Syntax tree. It was known that the \textit{GIVEN}, \textit{WHEN} and \textit{THEN} where the main predicates that define the skeleton of a requirement, thus, each predicate should implement its own Condition tree.\\
-There are widely known libraries to support the building of a grammar, such as Flex and Bison \cite{levine_flex_2009}, however, flex and bison only work with C++ programs and Antlr works with a number of different languages \cite{antlr_site}, hence, the choosing of Antlr library to support the development of this grammar. \textit{GIVEN}, \textit{WHEN} and \textit{THEN} are represented in the form of a Logical Expression that can be derived into child classes, given the lexer type. Next is the representation of the syntax tree (Fig. \ref{fig:ast_class_diagram}).
+As the grammar lexer set has been identified it was then necessary to define an Abstract Syntax tree. It is known that \textit{GIVEN}, \textit{WHEN} and \textit{THEN} are the main predicates that define the skeleton of a requirement, thus, each predicate should implement its own Condition tree.\\
+There are widely known libraries to support the building of a grammar, such as Flex and Bison \cite{levine_flex_2009}, however, flex and bison only work with C++ programs and Antlr works with a number of different languages \cite{antlr_site}, hence the choice of \textit{Antlr} library to support the development of this grammar. \textit{GIVEN}, \textit{WHEN} and \textit{THEN} are represented in the form of a Logical Expression that can be derived into child classes, given the lexer type. The representation of the syntax tree is presented on Fig. \ref{fig:ast_class_diagram}.
 
 % 
 \begin{figure}[H]
@@ -68,14 +68,14 @@ Functional or behavioral testing generates an output based on the given inputs a
     \centering
     \includegraphics[scale=0.65]{images/functional_inputs_outputs.png}
     \caption{Blackbox testing}
-    \label{fig:ast_class_diagram}
+    \label{fig:blackbox_testing}
 \end{figure}
 
 The Cause-Effect Graph (CEG) technique is a black-box method that considers only the desired external behavior of a system. It is also the only black-box test design technique that considers combinations of causes of system behaviors \cite{nursimulu_cause-effect_1995}.
 
 It can be assumed that each requirement in the form of \textit{GIVEN WHEN THEN} dictate a cause effect, as such, a collection of requirements cover a certain area of the software.\\
 
-Robustness testing is the ability of a software to keep an "acceptable" behaviour expressed in terms of \textit{robustness requirements}, in spite of exceptional or unforeseen execution conditions, such as communication failures, degraded modes, etc. \cite{khendek_model-based_2005}. Robustness requirements are within the set of pilot Railway project requirement collection, thus, it can be stated that by testing each requirement causes within the scope of this Railway project, Requirement coverage is achieved.\\
+Robustness testing is the ability of a software to keep an "acceptable" behaviour expressed in terms of \textit{robustness requirements}, in spite of exceptional or unforeseen execution conditions, such as communication failures, degraded modes, etc. \cite{khendek_model-based_2005}. Robustness requirements are within the set of pilot Railway project requirement collection, thus, it can be stated that by testing each requirement within the scope of this Railway project, Requirement coverage is achieved.\\
 
 As previously stated, a Requirement \textit{GIVEN} predicate defines the requirement or test pre-conditions, and \textit{WHEN} defines the requirement trigger conditions and implies an internal state change, thus, by invalidating such requirement conditions does not guarantee that the system or software internal state is changed and system behaves otherwise.\\
 
@@ -88,11 +88,11 @@ For a requirement that implies a change of a state, it needs to verify whether d
     \label{fig:door_isolation}
 \end{figure}
 
-In the above example (Fig. \ref{fig:door_isolation}), the Door Isolation requirement when evaluating to true needs to guarantee that the Door close state is assured, however, it cannot be stated otherwise, i.e., that door state would be set to Open when Isolation is not present, as this is given by the Door Open command, this requirement needs to verify that there are no other conditions conflicting or affected the desired results, hence, the verification of the presence of the isolation.
+In the above example (Fig. \ref{fig:door_isolation}), the Door Isolation requirement when evaluating to true needs to guarantee that the Door close state is assured, however, it cannot be stated otherwise, i.e., that door state would be set to Open when Isolation is not present, as this is given by the Door Open command, this requirement needs to verify that there are no other conditions conflicting or affecting the desired results, hence, the verification of the presence of the isolation.
 
 In summary, \textit{Sesnando} generates test cases according to requirement instructions.\\
 
-On an additional note, an internal survey has been revealed that conflicting requirements are very unlikely to happen, however, for cases where it does, those should be found on \textit{upper} vehicle/system level testing.\\
+On an additional note, an internal survey has revealed that conflicting requirements are very unlikely to happen, however, for cases where it does, those should be found on \textit{upper} vehicle/system level testing.\\
 
 \textcolor{red}{Provision - Se o Sesnando suportar opcionalmente negative tests a partir de AND requirements, ou seja, quando não existem requisitos de robustez, falar disso aqui.}\\
 
@@ -101,8 +101,8 @@ On an additional note, an internal survey has been revealed that conflicting req
 %----------------------- Signal manager ----------------------------
 \label{subsec:method_signal_manager}
 
-As previously stated, it is intended that Signal Manager could be run as a detached service from the local compiler solution. This would allow that every tester, developer or involved user could contribute to the growth of information in it, such that, every piece of testing information needed would be added only once, thus, the Test Generator accesses this remote repository in order to generate its tests, contributing to efficiently reduce the efforts needed, otherwise, every signal would need to be added as much as every existing localhost solutions.\\
-The Signal manager acts as a Web Service and serves the Signal Manager through a REST API. There are several endpoints to consult, edit and create additional signals on the database. The purpose of this API Endpoints is not only to support Test Generator, but also the management of the signal data without the need of accessing the web user interface, e.g, automating the import of huge chunks of signal data. The Signal Manager contains fourteen database tables, next is an excerpt of this database (Fig. \ref{fig:db_signal_manager}) that support the logic described throughout this report.\\
+As previously stated, it is intended that Signal Manager could be run as a detached service from the local compiler solution. This would allow that every tester, developer or involved user could contribute to the growth of information in it, such that every piece of testing information would be added only once, thus, the Test Generator accesses this remote repository in order to generate its tests, contributing to efficiently reduce the efforts needed, otherwise, every signal would need to be added as much as every existing localhost solutions.\\
+The Signal manager acts as a Web Service and serves the Signal Manager through a REST API. There are several endpoints to consult, edit and create additional signals on the database. The purpose of these API Endpoints is not only to support Test Generator, but also the management of the signal data without the need of accessing the web user interface, e.g, automating the import of huge chunks of signal data. The Signal Manager contains fourteen database tables which supports the logic described throughout this report. An excerpt of this database can be observed on Fig. ~\ref{fig:db_signal_manager}.
 
 \begin{figure}[H]
     \centering
@@ -116,6 +116,6 @@ A Logical Signal maps to one or more technical signals and a technical signal su
 
 \subsection{Test Designer}
 %----------------------- Signal manager ----------------------------
-\label{subsec:method_signal_manager}
+\label{subsec:method_test_designer}
 
 The main benefits the test designer is the ability of the user to visualise the contents the test specification. By default, the test generator persists the test specification on a CSV file, so, without a Graphical User Interface, the user would have to rely on external tools in order to review it. In other words, the Test Designer loads the CSV contents into a grid-view where several operations might be executed, such as editing and saving this CSV file or generate test scripts.

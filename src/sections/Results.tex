@@ -1,4 +1,79 @@
 \chapter{Results}
-\label{ch:5}
+\label{ch:results}
 
-Results
+This section presents the obtained results using the traditional methods versus the obtained results using the \textit{Sesnando} application. ... \textcolor{red}{reforcar}.\\
+
+The results presented here were applied on a real railway project for a rolling stock manufacturer...\\
+
+In order to write system test specifications for such project, several steps are required. First, new requirements need to be obtained from the Requirement management tool such as IBM Doors, the software under testing needs to be downloaded or the remote test racks needs to be accessed depending on the nature of the requirement, SIL0 or SIL2 respectively.\\
+
+The designing of a test specification requires the identification of the applicable software signals on the Interface Control Document (ICD), as defined on section \ref{sec:current_procedures} that satisfy the conditions of those requirements. As well as software signals, the requirement clauses need to be identified and combined according to the applicable requirement coverage criteria in the in the form of test steps. Once all \textit{Test Requirements} are identified, the specification is run against the current software release and a test report is generated.\\
+
+\textcolor{blue}{colocar aqui uma imagem de um excel de system testing}
+
+Both the test specification and test report are subject of a peer review. The goal of this activity is to detect possible human errors and validate the test results if no flaws are detected. An introduced human error on the specification will influence the test results, as such, the specification needs to be redesigned and re-executed.\\
+
+\textit{Sesnando} significantly reduces the effort involved in this process by automatically generating the test specification. The requirements of the railway project must be loaded to \textit{Sesnando} which then connects to a remote service to acquire the corresponding software signals. Once done, it will automatically generate a set of test steps using the project requirement converage criteria and returns a test script compatible with the manufacturer test tool. The activity of peer reviewing should not be discarded, as human errors might be introduced on software signals repository. \\
+
+A research was carried out at CSW to accurately determine the effectiveness of \textit{Sesnando}. Four people were asked to design a test specification for a single requirement. Given that the most common activities between \textit{Sesnando} and manual procedures are the technical signal identification and test generation, those will be considered for comparison.\\
+
+The following table illustrates the effort that each participant (identified as P1 to P4) would take to determine the software technical signals for the given requirement and the writing of the specification.
+
+\begin{table}[H]
+\caption{Effort using traditional methods}
+    \footnotesize
+    \centering
+    
+    \begin{tabular}{c c c}
+        \hline
+        % --- ROW Header --- %
+        \textbf{\textit{Participant}} & 
+        \textbf{\textit{Technical Signal Analysis}} & 
+        \textbf{\textit{Specification Writing}}\\ \hline  \\
+        
+        % --- ROW 1 --- %
+        \begin{tabular}[c]{@{}c@{}} \textbf{\textit{ P1 }} \end{tabular} & 
+        15 Min. & 
+        75 Min. \\
+        \hline \\
+        
+        % --- ROW 2 --- %
+        \begin{tabular}[c]{@{}c@{}} \textbf{\textit{ P2 }} \end{tabular} & 
+        15 Min. &
+        120 Min. \\
+        \hline \\
+       
+        % --- ROW 3 --- %
+        \begin{tabular}[c]{@{}c@{}} \textbf{\textit{ P3 }} \end{tabular} & 
+        45 Min. &
+        195 Min. \\
+        \hline \\
+        
+        % --- ROW 4 --- %
+        \begin{tabular}[c]{@{}c@{}} \textbf{\textit{ P4 }} \end{tabular} & 
+        30 Min. &
+        105 Min. \\
+        \hline \\
+        
+         % --- ROW 4 --- %
+        \begin{tabular}[c]{@{}c@{}} \textbf{\textit{ Avg. P}} \end{tabular} & 
+        \textbf{26 Min.} &
+        \textbf{123 Min.} \\
+        \hline \\
+        
+    \end{tabular}
+    \label{tab:effort_manual_testing}
+\end{table}
+
+\textcolor{blue}{ isto resulta numa média de ... ...}
+
+\textcolor{blue}{ No pior caso possivel do sesnando tem de se encontrar os sinais e colocá-los no signal manager, mas ainda assim, vai automatizar a criação da especificação}
+
+\textcolor{blue}{na colocação dos sinais deve considerar-se o tempo que os participantes levam a familiarisar-se com a ferramenta, up to 15-20 mins, depois de a conhecerem esse tempo é reduzido em mais de 50 porcento mas continua a considerar-se o tempo que leva a obter os sinais Px(Technical Signal Analysis) + first time usage OU experienced user}
+
+\textcolor{blue}{falar na complexidade dos requisitos que o sesnando é capaz de interpretar... fazer uma tabela de 1-5 e dar percentagens.}
+
+
+
+
+

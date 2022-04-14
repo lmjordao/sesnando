@@ -1,0 +1,19 @@
+%----------------------- Requirement analysis ----------------------------
+\section{Requirement analysis}
+\label{sec:requirement_analysis}
+
+The activity of identifying software functionalities and behavior is described as \textit{Requirements Engineering}. Before proceeding to the presentation of the \textit{Sesnando} architecture, the requirements of the \textit{Sesnando} tool (denominated as 'The application') will be identified in a simple manner.
+
+\begin{itemize}
+\item The application must be able to recognize a requirement identified by its keyword REQUIREMENT.
+\item The application must be able to identify \textit{Given}, \textit{When} and \textit{Then} predicates.
+\item The application must extract Logical Expressions between \textit{AND} and \textit{OR} boolean operators.
+\item The application must identify Logical Expressions using the operators: \textit{Equal than}, \textit{Lower Than}, \textit{Lower Than or Equal}, \textit{Greater Than} and \textit{Greater Than or Equal}.
+\item The application must be able to identify Requirement Signals (Logical Signals) within a Logical Expression.
+\item The application must be able to identify an Operand within a Logical Expression.
+\item The application must be able to identify a Logical Expression Quantifier, i.e., the system components to which the expression shall be evaluated, e.g., a train axle.
+\item The application must be able to compile the requirement into a Parse tree.
+\item The application must be able to access the Parse Tree and generate a set of test cases from the interpreted requirements.
+\item The application must be able to generate a standard output file (CSV) containing a set of test cases.
+\item The application must be able to generate a test script to be used on the testing environment.
+\end{itemize}
