@@ -1,0 +1,30 @@
+\appendix
+\chapter*{Appendix}
+
+\section{Benchmarking}
+\label{apx:section_apx}
+
+The requirement REQ442-2 from Section \ref{subsec:sesnando_input} has been benchmarked using the Eclipse IDE with ANTLR4 IDE 0.3.6 from the marketplace, resulting in the Figure \ref{fig:req_parse_tree}. Benchmark results are as follows:
+
+\begin{table}[H]
+\caption{ANTLR Grammar Profiler}
+    \footnotesize
+    \centering
+    \begin{tabular}{c c c}
+        \hline
+        \textbf{\textit{Measurement}} & \textbf{\textit{Value}}\\ \hline
+            &  \\
+     \begin{tabular}[c]{@{}c@{}} \textbf{\textit{Input}} \textbf{\textit{Size}}\end{tabular}  & 198 chars, 6 lines  \\ \hline
+        &   \\ 
+       \textbf{\textit{ Number of Tokens}} & 34  \\ \hline
+        &   \\
+        \textbf{\textit{Parse Time (ms)}} & 2268 \\ \hline
+            &   \\
+        \textbf{\textit{Prediction Time (ms)}} & 0,711 = 31.36\%  \\ \hline
+            &   \\
+       \textbf{\textit{Lookahead Burden}} & 53/34 = 1.56  \\ \hline
+        &  \\
+       \textbf{\textit{DFA Cache miss rate}} &  \begin{tabular}[c]{@{}c@{}} 43/53 = 81.13\% \end{tabular}  \\ \hline
+    \end{tabular}
+    \label{tab:grammar_benchmark}
+\end{table}

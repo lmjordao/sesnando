@@ -17,13 +17,8 @@ Testing activities are within the most important tasks of any business, from the
 Quality assurance markets keep growing due to the high costs involved in correcting these failures in advanced stages (e.g. post-release), however, detecting them as soon as they are introduced is very profitable \cite{hernandez_history_2020}.
 % ----- testing ends ----- %
 
-The objective of this project is to create a compiler capable of understanding functional Requirements and automatically generate their test cases in order to reduce the cost and effort involved in the testing activities. 
+The objective of this project is to create a compiler capable of understanding functional Requirements and automatically generate their test cases in order to reduce the cost and effort involved in the testing activities. \\
 
-\textcolor{blue}{
-In order to use this application, such software requirements shall be written on a controlled natural language (CNL) that define the functionalities of a software system. This compiler aims to automatically generate high-level tests by parsing and interpreting requirement contents into a Parse tree. Unit tests are not in the scope of the current project. \\
-//todo: Isto pode muito bem ser uma intro de uma próxima secção.
-//todo: quando se falar do scope, falar sobre aquela frase dos unit tests
-}
 
 %----------------------- Problem and Motivation ----------------------------
 \section{Problem and Motivation}
@@ -75,15 +70,11 @@ This project has five main activities. Those are illustrated on Figure \ref{fig:
 
 \textit{Sesnando} kicked-off at Critical Software (CSW) under the management of Dr. João Gabriel Silva conceived to automatically generate tests for railway projects under development at Critical Software. When the current thesis works have started to be carried out, there where already some advances made by two engineers at critical sofware. In order for \textit{Sesnando} to understand system requirements, a grammar was already designed. The information to support the creation of test cases was achieved through the use of local data files.\\
 
-\textcolor{red}{a Railway project was being developed at CSW in increments and in a stable phase, given that it was already operating in passenger service. It was decided to evaluate the capabilities of \textit{Sesnando} against such project.\\} 
-
-The scope of the works present in this thesis involve the reinforcement and refactoring of the existing grammar, which was then specified, accepted and implemented to accommodate the requirements of one of the railway projects being developed, from now on to be referred as 'Pilot Railway Project'. Also, the use of  local data files was discontinued and the application data resources (e.g. requirement signals) are now stored on a centralised repository which are then used to generate the requirement test cases.
+The scope of the works present in this thesis involve the reinforcement and refactoring of the existing grammar, which was then specified, accepted and implemented to accommodate the requirements of one of the railway projects being developed, from now on to be referred as 'Pilot Railway Project'. Also, the use of  local data files was discontinued and the application data resources (e.g. requirement signals) are now stored on a centralised repository which are then used to generate the requirement test cases.\\
 
 The overall solution evolved to a scalable architecture, so that, it can be easily adapted to future projects.
 The remote repository that stores application data has been developed at Critical Software by a graduate engineer where several talks have been carried out about its architecture and design in order to create a consensus with the module that will generate the tests.
 
-\textcolor{red}{Mencionar os trabalhos feitos pelo Luis e pelo Diogo\\
-- Dizer o que estava feito e o que vai ser feito... esclarecer melhor a questao de existir o aventra. Há aqui coisas que podem ser movidas para o scope do trabnalho. \\Por exemplo, fala-se no test generator e no test designer e ainda n foram definidos, por isso, aqui ainda tem de estar uma coisa muito vaga. railway project deve estar em minusculas.}
 
 
 %----------------------- Scope of this doc ----------------------------
@@ -95,6 +86,3 @@ The second chapter (Ch. \ref{ch:limitations}) presents the limitation of this st
 The third chapter (Ch. \ref{ch:sotart}) presents the state of the art, what are the current scientific advances in this subject, the available tools and technology.\\
 The forth chapter (Ch. \ref{ch:sesnando}) discusses the works done for this project, its requirements and architecture, and it is divided in two main sections, the application life-cycle and the method. The first section (Sec. \ref{sec:functional_description}) presents \textit{Sesnando} on a higher level and describes the main functionalities of the software and how to operate it. The second section (Sec. \ref{sec:method}) presents the project in more detail, how its core functionalities have been implemented and the reasons behind them.\\
 The fifth chapter (Ch. \ref{ch:results}) presents the conclusion and the final results from the analysis of this tool in-the-field.
-
-\textcolor{red}{jcunha: Um cap.5 a demonstrar a utilização da ferramenta e resultados obtidos. 
-Consegues demonstrar algumas das vantagens relativamente aos métodos atuais, e discutir outras potenciais vantagens (ex: menos erros de interpretação dos requisitos)?}

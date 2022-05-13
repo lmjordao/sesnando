@@ -19,6 +19,10 @@ será que só por existirem ANDs não podemos afirmar que é RACC, porque no rac
 
 ----- Future work -----
 
+suportar diferentes critérios de teste
+
+validar colisão entre requisitos
+
 ligar o sesnando ao cucumber/gherkin
 o sesnando interpreta requisitos escritos oficialmente na guerkin language por ser um standard conhecido.
 
@@ -30,3 +34,5 @@ por exemplo, aqui temos
 O sesnando sincronizar uma base de dados local com a base de dados remota eliminando a constante dependencia de uma ligação remota
 
 Desenvolver um plugin para o Jira que consiga interpretar requisitos directamente de lá
+
+

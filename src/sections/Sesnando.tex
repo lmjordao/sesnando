@@ -1,7 +1,8 @@
 \chapter{Sesnando}
 \label{ch:sesnando}
 
-This section introduces the SESNANDO project by describing the software operability and its core functionalities.
+This section presents the core functionalities of \textit{Sesnando} project and is divided into five sections. Section \ref{sec:functional_overview} (Functional Overview), provides an overview of its architecture by presenting the main modules and communication and data flow, followed by Section \ref{sec:software_architecture} (Software Architecture) where the all the modules are described. Section \ref{sec:requirement_analysis} (Requirement analysis) presents an analysis of the application requirements of this tool. Section \ref{sec:functional_description} (Functional Description) presents the functionality of \textit{Sesnando} and operability concepts. Whereas Section \ref{sec:method} (Method) presents some of the analysis and development details of the works that have been carried.
+
 
 \section{Functional Overview}
 %----------------------- Functional Overview ----------------------------
@@ -10,7 +11,7 @@ This section introduces the SESNANDO project by describing the software operabil
 This section describes how Sesnando can be used, its input resources, what the intermediate steps are and what will be generated as a result.\\
 The entry point of this software is a \textit{Console application} that might take a couple of arguments. From this application \textit{Sesnando} takes the requirements defined on an input file and starts it internal processing without prompting the user. When finished, i.e., the set of test steps have been generated to validate each requirement, \textit{Sesnando} will call a Graphical User Interface (GUI) application, namely \textit{Test Designer}, to display such test steps in a Grid View. From that, the user is free to change, add or remove any test steps or signal values. The displayed test specification can be stored on a persistent file (which can be opened at any time using the \textit{Test Designer}). The user is also able to export this test specification as a test script to be used on a test execution tool or test environment.\\
 
-The following image (Fig. \ref{fig:data_flow}) presents the main execution flow in a very simple manner. \\
+Figure \ref{fig:data_flow} presents the main execution flow in a very simple manner. \\
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.625]{images/sesnando_dataflow.png}
